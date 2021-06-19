@@ -38,5 +38,6 @@ public class HomeWorkApp {
             System.out.println("a>=b");
         else
             System.out.println("a<b");
+
     }
 }
