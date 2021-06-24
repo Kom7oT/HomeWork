@@ -13,7 +13,7 @@ public class HomeWorkApp3 {
         fillDiagonal(5);
         System.out.println(Arrays.toString(fillValues(5, 4)));
         findMinMax(6);
-        System.out.println(checkBalanceArr(7));
+        System.out.println(checkBalance(7));
     }
 
     /**
@@ -123,10 +123,10 @@ public class HomeWorkApp3 {
      * вернуть true, если в массиве есть место, в котором
      * сумма левой и правой части массива равны
      **/
-    public static boolean checkBalanceArr(int n) {
+    public static boolean checkBalance(int n) {
         int[] arr = new int[n];
         int sum = 0;
-        int rightsum = 0;
+        int leftsum = 0;
         boolean balanceExist = false;
         for (int i = 0; i < n; i++) {
             arr[i] = random.nextInt(20);
@@ -134,10 +134,11 @@ public class HomeWorkApp3 {
         }
         System.out.println(Arrays.toString(arr));
         for (int i = 0; i < n; i++) {
-            rightsum += arr[i];
-            if (rightsum == sum - rightsum)
+            leftsum += arr[i];
+            if (leftsum == sum - leftsum)
                 balanceExist = true;
         }
         return balanceExist;
     }
+
 }
