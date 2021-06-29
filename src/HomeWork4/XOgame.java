@@ -4,8 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class XOgame {
-    static final int SIZE = 3;
-    static final int DOTS_TO_WIN = 3;
+    static final int SIZE = 5;
+    static final int DOTS_TO_WIN = 4;
 
     static final char DOT_X = 'X';
     static final char DOT_O = 'O';
@@ -116,41 +116,30 @@ public class XOgame {
         return true;
     }
 
-    public static boolean checkWin(char c) {
-        int horizontal = 0;
-        int vertical = 0;
-        int mainDiag = 0;
-        int sideDiag = 0;
+    public static boolean checkLine(int y, int x, int dy, int dx, char c) {     //Метод проверки линий
+        int k=0;
         for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-
-                if (map[i][j] == c)
-                    horizontal++;
-                else if (map[i][j]!=c&&horizontal < DOTS_TO_WIN)
-                    horizontal = 0;
-
-                if (map[j][i] == c)
-                    vertical++;
-                else if (map[j][i]!=c&&vertical < DOTS_TO_WIN)
-                    vertical = 0;
-                int k = i + j;
-                if (k < SIZE && map[j][k] == c)
-                    mainDiag++;
-                else if (mainDiag < DOTS_TO_WIN)
-                    mainDiag = 0;
-            }
+            if (map[y + i * dy][x + i * dx] == c) {
+                k+=1;
+            } else k=0;
+            if (k==DOTS_TO_WIN)
+                return true;
         }
-
-        for (int i = SIZE-1; i >= 0; i--) {
-            for (int j = 0; j > SIZE; j++) {
-                if (map[i][j] == c)
-                    sideDiag++;
-                else if (map[i][j]!=c&&sideDiag < DOTS_TO_WIN)
-                    sideDiag = 0;
-            }
-        }
-        System.out.println(sideDiag);
-        return vertical == DOTS_TO_WIN || horizontal == DOTS_TO_WIN || mainDiag == DOTS_TO_WIN || sideDiag == DOTS_TO_WIN;
+        return false;
     }
 
+    public static boolean checkWin(char c) {                            //Доработанный метод проверки победы
+        for (int i = 0; i < SIZE; i++) {
+            if (checkLine(0, i, 1, 0, c))
+                return true;
+            if (checkLine(i, 0, 0, 1, c))
+                return true;
+            if (checkLine(0, 0, 1, 1, c))
+                return true;
+            if (checkLine(SIZE - 1, 0, -1, 1, c))
+                return true;
+        }
+        return false;
+    }
 }
+
