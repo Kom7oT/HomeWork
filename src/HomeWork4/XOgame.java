@@ -4,8 +4,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class XOgame {
+
     static final int SIZE = 5;
     static final int DOTS_TO_WIN = 4;
+
+    static final int SIZE = 3;
+//    static final int DOTS_TO_WIN = 3;
+
 
     static final char DOT_X = 'X';
     static final char DOT_O = 'O';
@@ -116,6 +121,7 @@ public class XOgame {
         return true;
     }
 
+
     public static boolean checkLine(int y, int x, int dy, int dx, char c) {     //Метод проверки линий
         int k=0;
         for (int i = 0; i < SIZE; i++) {
@@ -142,4 +148,5 @@ public class XOgame {
         return false;
     }
 }
+
 
