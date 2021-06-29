@@ -7,11 +7,6 @@ public class XOgame {
 
     static final int SIZE = 5;
     static final int DOTS_TO_WIN = 4;
-
-    static final int SIZE = 3;
-//    static final int DOTS_TO_WIN = 3;
-
-
     static final char DOT_X = 'X';
     static final char DOT_O = 'O';
     static final char DOT_EMPTY = '.';
