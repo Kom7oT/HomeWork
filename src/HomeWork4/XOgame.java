@@ -4,8 +4,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class XOgame {
+
+    static final int SIZE = 5;
+    static final int DOTS_TO_WIN = 4;
+
     static final int SIZE = 3;
 //    static final int DOTS_TO_WIN = 3;
+
 
     static final char DOT_X = 'X';
     static final char DOT_O = 'O';
@@ -116,35 +121,32 @@ public class XOgame {
         return true;
     }
 
-    public static boolean checkWin(char c) {
-        if (map[0][0] == c && map[0][1] == c && map[0][2] == c) {
-            return true;
-        }
-        if (map[1][0] == c && map[1][1] == c && map[1][2] == c) {
-            return true;
-        }
-        if (map[2][0] == c && map[2][1] == c && map[2][2] == c) {
-            return true;
-        }
 
-        if (map[0][0] == c && map[1][0] == c && map[2][0] == c) {
-            return true;
+    public static boolean checkLine(int y, int x, int dy, int dx, char c) {     //Метод проверки линий
+        int k=0;
+        for (int i = 0; i < SIZE; i++) {
+            if (map[y + i * dy][x + i * dx] == c) {
+                k+=1;
+            } else k=0;
+            if (k==DOTS_TO_WIN)
+                return true;
         }
-        if (map[0][1] == c && map[1][1] == c && map[2][1] == c) {
-            return true;
-        }
-        if (map[0][2] == c && map[1][2] == c && map[2][2] == c) {
-            return true;
-        }
-
-        if (map[0][0] == c && map[1][1] == c && map[2][2] == c) {
-            return true;
-        }
-        if (map[0][2] == c && map[1][1] == c && map[2][0] == c) {
-            return true;
-        }
-
         return false;
     }
 
+    public static boolean checkWin(char c) {                            //Доработанный метод проверки победы
+        for (int i = 0; i < SIZE; i++) {
+            if (checkLine(0, i, 1, 0, c))
+                return true;
+            if (checkLine(i, 0, 0, 1, c))
+                return true;
+            if (checkLine(0, 0, 1, 1, c))
+                return true;
+            if (checkLine(SIZE - 1, 0, -1, 1, c))
+                return true;
+        }
+        return false;
+    }
 }
+
+
