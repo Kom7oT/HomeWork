@@ -1,6 +1,6 @@
 package HomeWork6.Animals;
 
-public abstract class Animal {
+public class Animal {
    protected String name;
    protected String color;
    protected int age;
