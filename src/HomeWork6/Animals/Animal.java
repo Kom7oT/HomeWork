@@ -1,5 +1,6 @@
 package HomeWork6.Animals;
 
+
 public abstract class Animal {
     String name;
     String color;
@@ -20,4 +21,7 @@ public abstract class Animal {
     public static void getCount() {
         System.out.printf("Animals created: %d\n", count);;
     }
+
+
+
 }
