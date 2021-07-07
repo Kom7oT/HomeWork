@@ -25,7 +25,6 @@ public class Cat extends Animal {
     public static void getCount() {
         System.out.printf("Cats created: %d\n", count);
     }
-
-public class Cat {
-
 }
+
+
