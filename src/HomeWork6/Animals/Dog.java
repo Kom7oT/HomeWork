@@ -1,5 +1,6 @@
 package HomeWork6.Animals;
 
+
 public class Dog extends Animal {
     private final int maxRun = 500;
     private final int maxSwim = 10;
@@ -27,4 +28,7 @@ public class Dog extends Animal {
     public static void getCount() {
         System.out.printf("Dogs created: %d\n", count);
     }
+
+public class Dog {
+
 }

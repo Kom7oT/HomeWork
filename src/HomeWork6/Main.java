@@ -1,10 +1,7 @@
 package HomeWork6;
 
-import HomeWork6.Animals.Animal;
-import HomeWork6.Animals.Cat;
-import HomeWork6.Animals.Dog;
-
 public class Main {
+
     public static void main(String[] args) {
         Cat cat1 = new Cat("Barsik", "red", 4);
         Cat cat2 = new Cat("Murka", "brown", 3);
@@ -23,4 +20,5 @@ public class Main {
         Cat.getCount();
         Dog.getCount();
     }
+
 }

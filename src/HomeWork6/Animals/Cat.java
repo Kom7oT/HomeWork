@@ -1,5 +1,6 @@
 package HomeWork6.Animals;
 
+
 public class Cat extends Animal {
     private final int maxRun = 200;
     private static int count = 0;
@@ -24,4 +25,7 @@ public class Cat extends Animal {
     public static void getCount() {
         System.out.printf("Cats created: %d\n", count);
     }
+
+public class Cat {
+
 }
