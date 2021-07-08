@@ -1,5 +1,9 @@
 package HomeWork6;
 
+import HomeWork6.Animals.Animal;
+import HomeWork6.Animals.Cat;
+import HomeWork6.Animals.Dog;
+
 public class Main {
 
     public static void main(String[] args) {
