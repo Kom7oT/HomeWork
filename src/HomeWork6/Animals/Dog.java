@@ -29,6 +29,6 @@ public class Dog extends Animal {
         System.out.printf("Dogs created: %d\n", count);
     }
 
-public class Dog {
+
 
 }
