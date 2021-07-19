@@ -20,28 +20,23 @@ public class Logic {
         isGameFinished = true;
         printMap();
         if (checkWinLines(DOT_X, DOTS_TO_WIN)) {
-            System.out.println("Вы победили!");
             return;
         }
         if (isFull()) {
-            System.out.println("Ничья");
             return;
         }
 
         aiTurn();
         printMap();
         if (checkWinLines(DOT_O, DOTS_TO_WIN)) {
-            System.out.println("Компьютер победил. Сейчас их даже в шахматы не выиграть...");
-           return;
+            return;
         }
         if (isFull()) {
-            System.out.println("Ничья");
             return;
         }
 
         isGameFinished = false;
     }
-
 
     public static void initMap() {
         map = new char[SIZE][SIZE];
@@ -54,18 +49,9 @@ public class Logic {
     }
 
     public static void printMap() {
-        System.out.print("  ");
         for (int i = 0; i < SIZE; i++) {
-            System.out.print(i + 1 + " ");
-        }
-        System.out.println();
-
-        for (int i = 0; i < SIZE; i++) {
-            System.out.print(i + 1 + " ");
             for (int j = 0; j < SIZE; j++) {
-                System.out.printf("%c ", map[i][j]);
             }
-            System.out.println();
         }
     }
 
@@ -162,7 +148,6 @@ public class Logic {
         }
         return true;
     }
-
 
 
     static boolean checkLine(int cy, int cx, int vy, int vx, char dot, int dotsToWin) {
