@@ -28,7 +28,7 @@ public class Main {
         System.out.println("Количество элементов в списке: " + list.size());
         System.out.println("Первый элемент: " + list.getFirst());
         System.out.println("Последний элемент: " + list.getLast());
-        System.out.println("Поиск значения '2': " + list.contains(2));
+        System.out.println("Поиск значения '3': " + list.contains(3));
         System.out.println("Поиск значения '100': " + list.contains(4444));
         System.out.println("Значение первого элемента списка: " + list.getFirst());
         System.out.println("Значение последнего элемента списка: " + list.getLast());
