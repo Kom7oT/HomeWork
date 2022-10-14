@@ -1,7 +1,7 @@
 package ru.geekbrains.homework1;
 
 class Person {
-    private Person() {
+    public Person() {
     }
 
     private String firstName;
@@ -58,7 +58,13 @@ class Person {
     }
 
     public static class Builder {
-
+        private String firstName;
+        private String lastName;
+        private String middleName;
+        private String country;
+        private String address;
+        private int age;
+        private String gender;
         public final Person person = new Person();
 
         public Builder addFirstName(String firstName) {
@@ -95,6 +101,8 @@ class Person {
             this.person.gender = gender;
             return this;
         }
-
+public Person build(){
+            return person;
+}
     }
 }
